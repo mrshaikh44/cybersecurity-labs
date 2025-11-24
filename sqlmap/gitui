@@ -1,0 +1,45 @@
+# Reports
+
+This folder contains scan and analysis outputs for each tool.  
+Add your raw outputs, exported files, and short analysis notes into the appropriate subfolder.
+
+Structure:
+- `/reports/nmap/` — `.nmap`, `.xml`, `.gnmap` outputs and notes
+- `/reports/wireshark/` — `.pcap`, `.pcapng` and capture analysis notes
+- `/reports/hashcat/` — `potfile`, cracked-results, logs
+- `/reports/sqlmap/` — sqlmap output files, dumps and notes
+
+**Reminder:** Only include outputs from authorized tests. Do not upload sensitive or personally identifiable data.
+git checkout -b feature/add-reports
+mkdir -p reports/nmap reports/wireshark reports/hashcat reports/sqlmap
+
+cat > reports/README.md <<'EOF'
+# Reports
+
+This folder contains scan and analysis outputs for each tool.  
+Add your raw outputs, exported files, and short analysis notes into the appropriate subfolder.
+
+Structure:
+- /reports/nmap/ — .nmap, .xml, .gnmap outputs and notes
+- /reports/wireshark/ — .pcap, .pcapng and capture analysis notes
+- /reports/hashcat/ — potfile, cracked-results, logs
+- /reports/sqlmap/ — sqlmap output files, dumps and notes
+
+**Reminder:** Only include outputs from authorized tests. Do not upload sensitive or personally identifiable data.
+EOF
+
+# create placeholders so folders are tracked
+touch reports/nmap/.gitkeep
+touch reports/wireshark/.gitkeep
+touch reports/hashcat/.gitkeep
+touch reports/sqlmap/.gitkeep
+
+git add reports
+git commit -m "Add reports folder structure and placeholders"
+git push -u origin feature/add-reports
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+*.pcap
